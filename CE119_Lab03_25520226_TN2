@@ -16,7 +16,10 @@ main:
 	syscall
 	li $v0, 10
 	syscall
-reverse_words:
+#thu tuc reverse_words
+#dau vao $a0, chua dia chi chuoi dau vao
+#tra ve: khong co gia tri tra ve, str1 da duoc sap xep lai
+reverse_words: 
 	addi $sp, $sp, -12
 	sw $ra, 8($sp)
 	sw $s0, 4($sp)
