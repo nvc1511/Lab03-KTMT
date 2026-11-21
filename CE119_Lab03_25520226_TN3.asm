@@ -25,7 +25,9 @@ fi_loop:
         j     fi_loop
 fi_done:
         jr    $ra
-
+#thu tuc fib_rec
+#dau vao $a0, nhap so n
+#dau ra $v0, ket qua F(n)
 fib_rec:
 	addi $sp, $sp, -12
 	sw   $ra, 8($sp)
@@ -40,7 +42,7 @@ fib_rec:
 	jal  fib_rec                 # v0 = fib(n-1)
 	move $s0, $v0            #luu vao s0
 
-	lw   $a0, 4($sp)         # n?p l?i n
+	lw   $a0, 4($sp)         
 	addi $a0, $a0, -2
 	jal  fib_rec                 # v0 = fib(n-2)
 
